@@ -1,0 +1,8 @@
+{
+    "host": "192.168.2.62",
+    "user": "chiendv",
+    "password": "Aa@123456",
+    "port": 3306,
+    "database": "kyso",
+    "charset": "utf8mb4"
+}

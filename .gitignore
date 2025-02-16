@@ -22,4 +22,8 @@ venv
 package-lock.json
 
 staticfiles/*
-!staticfiles/.gitkeep 
+!staticfiles/.gitkeep
+
+# Ignore environment and configuration files
+.env
+db_config.json
