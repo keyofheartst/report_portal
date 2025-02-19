@@ -1,0 +1,2 @@
+- Tình trạng : Ngày 17/02/2025 đã chạy thành công dag lấy dữ liệu từ db
+- Công việc tiếp theo : Đổ dũ liệu lên dashboard

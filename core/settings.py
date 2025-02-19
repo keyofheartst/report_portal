@@ -1,14 +1,14 @@
 import os
-from decouple import config
 from unipath import Path
 import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_DIR = Path(__file__).parent
 
-SECRET_KEY = config('SECRET_KEY', default='S#perS3crEt_1122')
-DEBUG = config('DEBUG', default=False)
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', config('SERVER', default='127.0.0.1')]
+SECRET_KEY = os.environ.get('SECRET_KEY', 'S#perS3crEt_1122')
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', os.environ.get('SERVER', '127.0.0.1')]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -57,14 +57,13 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': config('dbname', default='default_database_name'),
-        'USER': config('user', default='default_user'),
-        'PASSWORD': config('password', default='default_password'),
-        'HOST': config('hostDb', default='127.0.0.1'),
-        'PORT': config('portDb', default='3306'),
+        'NAME': os.environ.get('dbname', 'default_database_name'),
+        'USER': os.environ.get('user', 'default_user'),
+        'PASSWORD': os.environ.get('password', 'default_password'),
+        'HOST': os.environ.get('hostDb', '127.0.0.1'),
+        'PORT': os.environ.get('portDb', '3306'),
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {

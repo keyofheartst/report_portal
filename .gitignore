@@ -27,3 +27,5 @@ staticfiles/*
 # Ignore environment and configuration files
 .env
 db_config.json
+logs/
+*.log
